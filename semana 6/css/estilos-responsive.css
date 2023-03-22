@@ -1,0 +1,293 @@
+*{
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0;
+}
+html{
+    max-height: 100%; 
+}
+body{
+    font-family: Tahoma;
+    font-size: 18px;
+    background-image: url(../img/incapshapinero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#header{
+    background-color: lightsteelblue;
+    border:2px solid blue;
+    border-radius: 20px 20px 10px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    grid-area: header;
+}
+
+ul{
+    padding: 0;
+    margin: 0 1px;
+}
+
+li{
+    display: inline;
+    list-style: none;
+    margin: 0 5px;
+    font: bold 12px verdana;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+
+}
+/* seccion estilos barra nav */
+
+#menu{
+    grid-area: nav; 
+    background-color: rgba(22, 116, 192, 0.822);
+    border: 2px solid rgb(66, 0, 128);
+    border-radius: 22px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+/* seccion estilos  al buscador web */
+
+.buscarbox input{
+    height: 25px;
+    width: 0px;
+    padding:0px 0px;
+    border-radius:40px;
+    border:0px;
+    padding-right: 50px;
+    transition: 0.8s ease;       
+}
+
+.buscarbox input:hover{
+    width: 150px;
+    padding-left: 10px;
+    outline: none; /* quitar bordes*/
+    } 
+
+#main{
+    grid-area: main;/* nombre asignadoa sectionen display grid*/
+    background-color: rgba(255,255,255,0.6);
+    border:2px solid rgb(49, 0, 128);
+    max-width:100%;
+    height: auto;
+    backdrop-filter: blur(5px);
+}
+
+figure{
+    display: inline;
+    margin: 45px;
+    padding: 5px;
+}
+/* seccion  estilos article programas incap */
+
+.programa{
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    width: 45%;
+    height: 200px;
+    position: relative;
+    border:  1px solid black;
+    border-radius: 15px;
+    background-color: rgba(255,255,255,0.6);
+    backdrop-filter: blur(5px);
+}
+
+/* seccion estilos barra lateral derecha aside */
+
+#sidebar{
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    background-color: rgba(255,255,255,0.6);
+    backdrop-filter: blur(5px);
+}
+
+iframe{
+    max-width: 100%;
+    height: auto;
+}
+/* seccion  estilos pie de pagina */
+
+#footer{
+    grid-area: footer;/* se asigna nombre a contenedor */
+    padding-top: 20px;
+    border:2px solid blue;
+    border-radius: 20px 20px 10px 10px;
+    clear:both;
+    background-color: rgba(255,255,255,0.6);
+    backdrop-filter: blur(20px);
+}
+
+/* estilos a las redes sociales  */
+
+#redes a{
+    padding: 5px;
+    margin: 0;
+}
+
+#redes a{
+    transform: scalex(1.5); /* animacion de agrandar imagen ejex */
+}
+
+/* estilos a los iconos fontawesome: aplicar estilos a todos los iconos que comieza con la class fa */
+
+i[class^="fa"]{
+    color:grey;
+    font-size: 18px;}
+
+i[class^="fab"]{
+    color:grey;
+    font-size: 30px;
+    border:1px solid transparent;
+    margin:0px;
+    }
+
+    /* estilos al icono almurguesa son las tres lineas */
+    
+
+.openmenu {
+    display: none;
+    cursor: pointer;
+    font-size: 2 rem;
+    }
+
+/* seccion de estilos webb responsive a contenedor  con display grid */
+
+#grid-container > * {
+    text-align: center;
+    box-shadow: 1px 1px 7px 0px rgba(0,0,0,0.75);
+    }
+
+/* definir estilos  display grid  para vista pc 3 columnas */
+
+#grid-container{
+    display:grid;
+    grid-gap:10px; 
+    grid-template: 
+    "header header header" 150px
+    "nav nav nav" 50px
+    "main main sidebar" 300px
+    "main main sidebar" 300px
+    "main main sidebar" 300px
+    "footer footer footer" 150px /
+    1300px 350px 300px; 
+}
+
+@media (max-width:1024px){
+    #grid-container{
+        grid-template: 
+        "header header" 170px
+        "nav main" 800px
+        "nav main"  700px
+        "sidebar sidebar" 650px
+        "footer footer" 100px /
+        250px 450px; 
+        font-size: 75%;
+    }
+
+
+#menu{
+    background-color: blue;
+    border-radius: 22px;
+    display: block;
+    padding: 45px;
+    margin:40px;
+    height: auto;
+    text-align: center;
+}
+#main{
+display: flex;
+flex-direction: column;/* cambia la forma de dirección de fila a col*/
+justify-content: space-between;
+align-items:center;
+flex-wrap: wrap;/*se define el auto ajuste de ancho dispostivo pasa a sgte. linea*/
+max-width:100%;
+
+}
+.programa{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items:center;
+flex-wrap: wrap;
+max-width: 100%;
+height: auto;
+border: 1px solid black; 
+
+}
+iframe{
+max-width: 100%;
+height: auto;
+}
+.buscarbox{
+display:block;
+padding: 5px;
+}
+}
+/* seccion estilos celular 1 columna */
+@media (max-width:640px){
+    #grid-container{
+    grid-template: 
+    "header " 150px
+    "nav " 50px
+    "main" 1120px
+    "sidebar " 800px
+    "footer" 100px /
+    500px; 
+    font-size: 60%;
+    }
+    
+
+    #menu{
+        display: none;/* se oculta contenedor nav opciones*/
+    } 
+    /* se define que aparezca el menu hamburguesa en la parte superior*/
+    .openmenu{
+        display: block;
+        position:absolute;
+        top:10px;
+        right:120px;
+        z-index:99;/* se define capa encima del texto de contenido HTML*/
+        cursor: pointer;
+        }
+    
+    #main{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items:center;
+        flex-wrap: wrap;
+        max-width: 100%;
+        height: auto;
+    }
+.programa{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 100%;
+    height: auto;
+    border: 1px solid black; 
+    }
+iframe{
+    max-width: 100%;
+    height: auto;
+}
+.buscarbox{
+    display:none;
+}
+}
